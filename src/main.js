@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios'; // import axios
-import firebase from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -20,8 +20,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
+initializeApp(firebaseConfig);
 new Vue({
   router,
   store,
