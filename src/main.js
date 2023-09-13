@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import axios from 'axios'; // import axios
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
 // let's you use axios everywhere throughout the whole project
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
@@ -20,7 +20,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+getAuth(app);
+
+Vue.config.productionTip = false;
 new Vue({
   router,
   store,
