@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <top-header></top-header>
     <nav>
       <router-link to="/">
         Home
@@ -20,6 +21,15 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import TopHeader from './components/top-header.vue';
+
+export default {
+  components: { 'top-header': TopHeader },
+};
+
+</script>
 
 <style>
 #app {
